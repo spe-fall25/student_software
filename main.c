@@ -47,6 +47,6 @@ int main(void) {
     }
   }
 
-  printf("Welcome to Software Performance Engineering!\n");
+  printf("Welcome to SPE!\n");
   return 0;
 }
