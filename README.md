@@ -1,6 +1,6 @@
-# 6.106 Student Software
+# SPE Student Software
 
-Welcome to 6.106! This document will direct you through how to get setup with a VM and all the software you will need to use during the class.
+Welcome to Software Performance Engineering! This document will direct you through how to get setup with a VM and all the software you will need to use during the class.
 
 ## Part 1: VM Setup
 
@@ -23,10 +23,10 @@ For Macbooks, we recommend creating and running an Ubuntu machine with [OrbStack
    orb config set rosetta true
    ```
 
-3. Create a Linux VM for the class by opening named `6106` as follows:
+3. Create a Linux VM for the class by opening named `spe` as follows:
 
    ```
-   orb create -a amd64 ubuntu:noble 6106
+   orb create -a amd64 ubuntu:noble spe
    ```
 
    You can also create VMs through the OrbStack desktop app.
@@ -92,7 +92,7 @@ container, see <https://code.visualstudio.com/docs/devcontainers/containers>.
 <!-- Do note however that the course infrastructure was designed and tested for a clean install of Ubuntu 23.10.
 You may run into less issues by developing on a VM with tools such as KVM or VMWare. -->
 
-## Part 2: Configure Your 6.106 VM
+## Part 2: Configure Your SPE VM
 
 Within your Linux machine,
 
@@ -139,12 +139,12 @@ Within your Linux machine,
     Hi <user>! You've successfully authenticated, but GitHub does not provide shell access.
     ```
 
-### Install the 6.106 software
+### Install the SPE software
 
 1.  Clone this repo:
 
     ```
-    git clone git@github.com:6106-fall24/student_software.git
+    git clone git@github.com:CSE491-spring25/student_software.git
     ```
 
 2.  Inside the same terminal, after cloning the repository, run:
@@ -186,7 +186,7 @@ Within your Linux machine,
 Clang is the C compiler that we will use in this class. We provide a custom version of clang that is built with OpenCilk. If you want to compile some file through the command line or while writing Makefiles, you will want to use:
 
 ```
-clang-6106
+clang-spe
 ```
 
 ### telerun
@@ -216,15 +216,15 @@ telerun [binary]
 
    ```
    user@vm:~/student_software$ make
-   clang-6106 -std=gnu11 -Wall -fopencilk  -O3 -DNDEBUG -ftree-vectorize -flto=full -march=native -Weverything -Werror -Wpedantic  -o fib.o -c fib.c
-   clang-6106 -std=gnu11 -Wall -fopencilk  -O3 -DNDEBUG -ftree-vectorize -flto=full -march=native -Weverything -Werror -Wpedantic  -o sum.o -c sum.c
-   clang-6106 -std=gnu11 -Wall -fopencilk  -O3 -DNDEBUG -ftree-vectorize -flto=full -march=native -Weverything -Werror -Wpedantic  -o main.o -c main.c
-   clang-6106 -lrt -lm -fopencilk -flto -lXext -lX11  -o test_program fib.o sum.o main.o
+   clang-spe -std=gnu11 -Wall -fopencilk  -O3 -DNDEBUG -ftree-vectorize -flto=full -march=native -Weverything -Werror -Wpedantic  -o fib.o -c fib.c
+   clang-spe -std=gnu11 -Wall -fopencilk  -O3 -DNDEBUG -ftree-vectorize -flto=full -march=native -Weverything -Werror -Wpedantic  -o sum.o -c sum.c
+   clang-spe -std=gnu11 -Wall -fopencilk  -O3 -DNDEBUG -ftree-vectorize -flto=full -march=native -Weverything -Werror -Wpedantic  -o main.o -c main.c
+   clang-spe -lrt -lm -fopencilk -flto -lXext -lX11  -o test_program fib.o sum.o main.o
 
 
 
    user@vm:~/student_software$ ./test_program
-   Welcome to 6.106!
+   Welcome to SPE!
 
 
    user@vm:~/student_software$ telerun ./test_program
@@ -232,7 +232,7 @@ telerun [binary]
    Submitting Job: ./test_program
    Waiting for job to finish...
    ==== Standard Output ====
-   Welcome to 6.106!
+   Welcome to SPE!
 
 
    ==== Standard Error ====
@@ -259,7 +259,7 @@ The nice thing is that you will be able to access your files from both ends. So,
 1. Configure your development environment
 
     1. **Install VS Code**
-    1. On your computer (NOT inside of your 6.106 VM), download and install Visual Studio Code from https://code.visualstudio.com/download
+    1. On your computer (NOT inside of your SPE VM), download and install Visual Studio Code from https://code.visualstudio.com/download
     2. **Install the Remote - SSH extension**
     1. Open VS Code
     1. Press Ctrl-Shift-P (on Windows/Linux) or Cmd-Shift-P (on Mac)
