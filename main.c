@@ -47,6 +47,6 @@ int main(void) {
     }
   }
 
-  printf("Welcome to 6.106!\n");
+  printf("Welcome to Software Performance Engineering!\n");
   return 0;
 }

@@ -14,6 +14,6 @@ else
    echo "Updating the package list"
    apt update
 
-   echo "Installing 6.106 Packages"
+   echo "Installing SPE Packages"
    apt install -y 6172-metapackage
 fi

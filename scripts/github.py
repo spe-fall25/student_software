@@ -126,7 +126,7 @@ def main(retries_remaining):
         prCyan("[3/4] Registering SSH key")
         try:
             make_github_request("/user/keys", authorization_token, {
-                "title": "6.106 VM",
+                "title": "SPE VM",
                 "key": public_ssh_key
             })
         except urllib.error.HTTPError as e:
@@ -150,12 +150,12 @@ def main(retries_remaining):
             raise
 
 if __name__ == "__main__":
-    prCyan("Welcome to MIT 6.106!")
+    prCyan("Welcome to SPE!")
     print("")
-    print("We will now set up MIT GitHub.")
+    print("We will now set up GitHub.")
     print("Please navigate to \033[1;35mhttps://github.mit.edu/settings/tokens/new\033[00m and create a new personal access token with the following settings:")
     print("")
-    print("Name this token MIT 6.106")
+    print("Name this token CSE 491")
     print("")
     print("Then, select the following scopes (including all sub-scopes):")
     print(" - repo")

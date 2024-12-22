@@ -19,8 +19,8 @@ else
 
   opencilk_path=$(pwd)/build
 
-  echo "Creating link clang-6106"
-  sudo ln -sf $opencilk_path/bin/clang /usr/bin/clang-6106
+  echo "Creating link clang-spe"
+  sudo ln -sf $opencilk_path/bin/clang /usr/bin/clang-spe
 
   echo "Pulling cheetah runtime"
   git clone $cheetah_url cheetah

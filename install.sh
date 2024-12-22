@@ -1,4 +1,4 @@
-echo "Starting 6.106 Setup"
+echo "Starting SPE Setup"
 
 ./scripts/1_prerequs.sh
 ./scripts/install_opencilk.sh

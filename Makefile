@@ -9,7 +9,7 @@ PRODUCT = test_program
 DEFINES += -DSIMDE_ENABLE_NATIVE_ALIASES
 
 # What we're building with
-CC = clang-6106
+CC = clang-spe
 CFLAGS = -std=gnu11 -Wall -Wno-psabi -fopencilk $(DEFINES)
 LDFLAGS = -static -pthread -fuse-ld=lld -lrt -lm -fopencilk -flto 
 

@@ -49,7 +49,7 @@ vrrAXIzTR3knr4IEchvO/Ufj/bqzms8RDmuNjY0WexEfPCl/JExIEzsY9XCTNE05
 """
 
 server_ip_port = "3.84.122.229:4443"
-hidden_perf_directory = "/tmp/6106-student-jobs"
+hidden_perf_directory = "/tmp/spe-student-jobs"
 
 poll_interval = 1 # seconds
 

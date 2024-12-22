@@ -10,7 +10,7 @@
 # Another option is to add it somewhere on the student locker
 # and add that location to the PATH
 
-vscode_runtime_dir="/var/tmp/vscode-runtime-dir-6106"
+vscode_runtime_dir="/var/tmp/vscode-runtime-dir-spe"
 mkdir -p $vscode_runtime_dir
 
 export XDG_RUNTIME_DIR=$vscode_runtime_dir
