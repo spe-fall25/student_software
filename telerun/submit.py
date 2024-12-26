@@ -41,7 +41,7 @@ ea0QYkZGUm68YNerCDlkejRydkSAkKGL8H8YbSqDhqOwaaL+RRLIWXHZrdJVe5qY
 -----END CERTIFICATE-----
 """
 
-server_ip_port = "128.30.92.79:22"
+server_ip_port = "128.30.92.79:4443"
 hidden_perf_directory = "/tmp/spe-student-jobs"
 
 poll_interval = 1 # seconds
