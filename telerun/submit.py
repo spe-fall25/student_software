@@ -53,6 +53,7 @@ CRoJkaOmUioJ9OE=
 """
 
 server_ip_port = "128.30.92.79:4443"
+server_domain_name = "fatality.csail.mit.edu"
 hidden_perf_directory = "/tmp/spe-student-jobs"
 
 poll_interval = 1 # seconds
@@ -90,7 +91,8 @@ def process_response(response, script_args=None, job_id=None):
 def get_last_complete_job(username, token, ssl_ctx):
     query_params = {"username": username, "token": token}
     url_query = urllib.parse.urlencode(query_params)
-    url = "https://" + server_ip_port + "/api/last_complete?" + url_query
+    # url = "https://" + server_ip_port + "/api/last_complete?" + url_query
+    url = "https://" + server_domain_name + "/api/submit?" + url_query
     req = urllib.request.Request(url, method="GET")
     try: 
         with urllib.request.urlopen(req, context=ssl_ctx) as f:
