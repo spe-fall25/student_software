@@ -41,7 +41,7 @@ HK0KggEH/5qjRW9U7ahlfxZnXu8=
 """
 
 # server_ip_port = "128.30.92.79:4443"
-server_ip_port = "35.9.130.236"
+server_ip_port = "35.9.130.236:4443"
 hidden_perf_directory = "/tmp/spe-student-jobs"
 
 poll_interval = 1 # seconds
