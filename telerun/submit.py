@@ -14,7 +14,7 @@ import base64
 timeout = 120 # seconds
 
 DEBUG = False
-
+'''
 server_cert = """
 -----BEGIN CERTIFICATE-----
 MIIDqDCCApCgAwIBAgIUKoRNdIJnstmUqsA5Tvb/mxDStOcwDQYJKoZIhvcNAQEL
@@ -68,7 +68,7 @@ HK0KggEH/5qjRW9U7ahlfxZnXu8=
 """
 
 server_ip_port = "35.9.130.236:4443"
-'''
+
 hidden_perf_directory = "/tmp/spe-student-jobs"
 
 poll_interval = 1 # seconds
