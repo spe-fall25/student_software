@@ -163,7 +163,7 @@ Within your Linux machine,
     authorize-telerun
     ```
 
-    Enter your netid as the username. To obtain your token, visit this [site](https://) and authenticate with your netid.
+    Enter your netid as the username and the token provided to you to authenticate with your netid.
     
 6.  Configure your git identity:
 
