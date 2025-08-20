@@ -14,60 +14,8 @@ import base64
 timeout = 120 # seconds
 
 DEBUG = False
-'''
-server_cert = """
------BEGIN CERTIFICATE-----
-MIIDqDCCApCgAwIBAgIUKoRNdIJnstmUqsA5Tvb/mxDStOcwDQYJKoZIhvcNAQEL
-BQAwYzELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk1BMRIwEAYDVQQHDAlDYW1icmlk
-Z2UxDDAKBgNVBAoMA01JVDEOMAwGA1UECwwFQ1NBSUwxFTATBgNVBAMMDDEyOC4z
-MC45Mi43OTAeFw0yNDEyMjYxNjQwMDlaFw0yNTEyMjYxNjQwMDlaMGMxCzAJBgNV
-BAYTAlVTMQswCQYDVQQIDAJNQTESMBAGA1UEBwwJQ2FtYnJpZGdlMQwwCgYDVQQK
-DANNSVQxDjAMBgNVBAsMBUNTQUlMMRUwEwYDVQQDDAwxMjguMzAuOTIuNzkwggEi
-MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC/1oVcLP1GAy4DuoR9l8W5psKm
-ORdKMDHlORe2fTtP+JyTNY3tkNwnU5MR8/NBoLYs9DYG6qMX03WJlpYqSz3hjnSb
-MYhMhGOd3WS2o0gJrZArCBy1vGs+8qg7FJYobiOqyefb7sSAketpnKuFkcnNYiJw
-JtFUNHrMKIscakXixkdinz84LEMRo5cSW6isXu+fmHJ93Yopqpok69FC5upCtFpn
-FwYw4KeVUo/v75jlCAtPocqRyWwxxN+BVbDu9amVSgX9qXiYAIwvV09KdV/zeBBA
-QKn4VZhJuHD35jRyRg0F4wMkjtq4DbNs9DX42qEPW9YpmitNmXm3f7iy0LbzAgMB
-AAGjVDBSMAsGA1UdDwQEAwIEMDATBgNVHSUEDDAKBggrBgEFBQcDATAPBgNVHREE
-CDAGhwSAHlxPMB0GA1UdDgQWBBQmj3klGdnYaL2zIed/RFjx8kN+WTANBgkqhkiG
-9w0BAQsFAAOCAQEAoUgy+buFszyH251PAS2YXPMyL8Ktxh//wmzeEgF9jPmLFsUh
-+4vDjvW90DYnDj5MA6MeOEe7IHqozgRdmquV9JJiS7tsqaRfhcS/NDHYJVe/u4sK
-0D3Ed2kV3M3X7TXZFv39nOEPft6u1Ci8FtbQa+89SXWPuwE7kvWWfIMvLPfsdkY3
-W3CzKYZu2pApO2C+oWsgX2ArQCwG4775NIcFO8XFuDeh+9tC1lpMAvSNDOnS8BIy
-QHA6L9zCf5eN9sRLFLuxlXPmU1GFWbwNeA5r5LWRHcbGHR4BKBJ+X0Yt+IR5t8DQ
-9cBeOh0fdZY1TeNZsWDOPMmqXXIEaOl7Jp6Skw==
------END CERTIFICATE-----
-"""
 
-server_ip_port = "128.30.92.79:4443"
-'''
-server_cert = """
------BEGIN CERTIFICATE-----
-MIIDoDCCAoigAwIBAgIUR0mJFfz7DoD4ycyFvEmx2/8h/V0wDQYJKoZIhvcNAQEL
-BQAwXzELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk1JMRAwDgYDVQQHDAdMYW5zaW5n
-MQwwCgYDVQQKDANNU1UxDDAKBgNVBAsMA0NTRTEVMBMGA1UEAwwMMzUuOS4xMzAu
-MjM2MB4XDTI1MDExMDE4NDE0NVoXDTI2MDExMDE4NDE0NVowXzELMAkGA1UEBhMC
-VVMxCzAJBgNVBAgMAk1JMRAwDgYDVQQHDAdMYW5zaW5nMQwwCgYDVQQKDANNU1Ux
-DDAKBgNVBAsMA0NTRTEVMBMGA1UEAwwMMzUuOS4xMzAuMjM2MIIBIjANBgkqhkiG
-9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlbm67tEu3O44B/xPmcbofqX2F6hlRR5RTfzo
-nvqMtW+RPvHDROCDyWZ0FjqVp+ukSwjxJdJrxl91gWFtyBQqgWOAW1kM+PmvlUXI
-D65n6ViHfnmnSJ7fPgxrxV76Hb0c/OQBs5IvAsIyeU5QdtoGMZlfXDomtSvgnDmt
-YmfP0SFsuh+X3CalR1HVw/cWG0ssVeY6aAYeFzdSAuCo9j9tgbVAfDmS4NuNpd68
-fZUQHl2yzYkco1138Tiib/52KofANzxby4mzYLLtDl1vv13XFqELsUuQ9XBEQfoL
-SW5gJ2343e+t4cW0sAFSaSu4HI7QJwfo0qkmgdYf0cx/Xwn1RwIDAQABo1QwUjAL
-BgNVHQ8EBAMCBDAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDwYDVR0RBAgwBocEIwmC
-7DAdBgNVHQ4EFgQUpMVk555zMbfTGzDioEp6o1dd6GkwDQYJKoZIhvcNAQELBQAD
-ggEBABEzTGUCByew7dmeWau8HagDlgImwaUuMNSsQhM5Ok53bt9yIyWZQ5pGI87U
-NUH0wxyO0dhQ23mBy3f0LNXg+Ktc9pAUgGJFOejmyE7Bnd/c2XFcJ7xg73dip08d
-ZlEqTecfoNMADRq2e6SQgvMv3UFQ1Si47SfSyfphus4BHv9RW8ueuN4zlL1DMSwD
-VLbUWNOBXBwvODTTaVtsM+miKOmnQQegKQXp5R5sFA3gv4ffGkXrzPKnfVL9RPGE
-rsJzVPPXBc4R1wEhe3ZFlrIYe7N/cRigFoIVnLYSmDVolc9S6Sv1s7xiROzYNVYT
-HK0KggEH/5qjRW9U7ahlfxZnXu8=
------END CERTIFICATE-----
-"""
-
-server_ip_port = "35.9.130.236:4443"
+server_ip_port = "cse491-submit.egr.msu.edu"
 
 hidden_perf_directory = "/tmp/spe-student-jobs"
 
@@ -103,13 +51,13 @@ def process_response(response, script_args=None, job_id=None):
                     f2.write(orig_file_content)
                     
     
-def get_last_complete_job(username, token, ssl_ctx):
+def get_last_complete_job(username, token):
     query_params = {"username": username, "token": token}
     url_query = urllib.parse.urlencode(query_params)
     url = "https://" + server_ip_port + "/api/last_complete?" + url_query
     req = urllib.request.Request(url, method="GET")
     try: 
-        with urllib.request.urlopen(req, context=ssl_ctx) as f:
+        with urllib.request.urlopen(req) as f:
             response = json.load(f)
             if response["success"]:
                 print("Last completed job:")
@@ -132,7 +80,7 @@ def get_last_complete_job(username, token, ssl_ctx):
                 print("=" * 50 + "\n")
 
 
-def submit_job(username, token, script_args, ssl_ctx, override_pending=False, is_util=False):
+def submit_job(username, token, script_args, override_pending=False, is_util=False):
     query_params = {"username": username, "token": token, "debug": int(DEBUG)}
     if override_pending:
         query_params["override_pending"] = "1"
@@ -157,7 +105,7 @@ def submit_job(username, token, script_args, ssl_ctx, override_pending=False, is
     request.add_header("Content-Type", "application/json")
     
     try:
-        response = urllib.request.urlopen(request, context=ssl_ctx)
+        response = urllib.request.urlopen(request)
         response_json = json.load(response)
         return response_json["job_id"]
     except urllib.error.HTTPError as e:
@@ -252,12 +200,12 @@ def main():
         username = auth["username"]
         token = auth["token"]
     is_util = args.utils
-    ssl_ctx = ssl.create_default_context(cadata=server_cert)
+    #ssl_ctx = ssl.create_default_context(cadata=server_cert)
 
     if not args.bypass_last_job:
-        last_complete_job = get_last_complete_job(username, token, ssl_ctx)
+        last_complete_job = get_last_complete_job(username, token)
 
-    job_id = submit_job(username, token, script_args, ssl_ctx, override_pending=args.override_pending, is_util=is_util)
+    job_id = submit_job(username, token, script_args, override_pending=args.override_pending, is_util=is_util)
     if job_id is None:
         print("You already have a pending job. Pass '--override-pending' if you want to replace it.")
         exit(1)
@@ -278,7 +226,7 @@ def main():
                 "https://" + server_ip_port + "/api/status?" + url_query,
                 method="GET",
             )
-            with urllib.request.urlopen(req, context=ssl_ctx) as f:
+            with urllib.request.urlopen(req) as f:
                 response = json.load(f)
             
             state = response["state"]
@@ -297,7 +245,7 @@ def main():
                     "https://" + server_ip_port + "/api/reported?" + url_query,
                     method="POST",
                 )    
-                with urllib.request.urlopen(req, context=ssl_ctx) as f:
+                with urllib.request.urlopen(req) as f:
                     response = json.load(f)
                     print("Reported job completion.")
                     
@@ -325,7 +273,7 @@ def main():
                     "https://" + server_ip_port + "/api/delete?" + url_query,
                     method="POST",
                 )
-                with urllib.request.urlopen(req, context=ssl_ctx) as f:
+                with urllib.request.urlopen(req) as f:
                     response = json.load(f)
                     if response["success"]:
                         print("Job removed successfully.")
