@@ -144,7 +144,7 @@ Within your Linux machine,
 1.  Clone this repo:
 
     ```
-    git clone git@github.com:CSE491-spring25/student_software.git
+    git clone https://github.com/spe-fall25/student_software.git
     ```
 
 2.  Inside the same terminal, after cloning the repository, run:
